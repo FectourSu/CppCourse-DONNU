@@ -13,26 +13,6 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
-    <Filter Include="Файлы заголовков\Task 1">
-      <UniqueIdentifier>{1a3528b9-854b-4a9a-b5af-d6f6d77b10dd}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Файлы заголовков\Task 2">
-      <UniqueIdentifier>{cf27da4b-bebc-4b25-a1d9-b1593bed98c5}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Файлы заголовков\Task 3">
-      <UniqueIdentifier>{c05ef7d0-6424-45cf-ad0b-f56e59c556fc}</UniqueIdentifier>
-    </Filter>
-  </ItemGroup>
-  <ItemGroup>
-    <ClInclude Include="Task1.h">
-      <Filter>Файлы заголовков\Task 1</Filter>
-    </ClInclude>
-    <ClInclude Include="Task2.h">
-      <Filter>Файлы заголовков\Task 2</Filter>
-    </ClInclude>
-    <ClInclude Include="Task3.h">
-      <Filter>Файлы заголовков\Task 3</Filter>
-    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Main.cpp">
