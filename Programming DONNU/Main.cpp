@@ -50,7 +50,7 @@ int* processArray(int* mass, int initialElement, int step, const int size)
 		temp++;
 	}
 
-	printf("\nThe number of three-digit numbers: %d \n", valueCNT);
+	printf("\n\nThe number of three-digit numbers: %d \n", valueCNT);
 
 	int* arrSptr = new int[size];
 	temp = 0;
@@ -75,13 +75,13 @@ void RunTask1()
 	int b1 = 0, step = 0;
 	const int size = 10;
 
-	std::cout << "Enter initial element: ";
-	std::cin >> b1;
+	printf("Enter initial element: ");
+	scanf_s("%d", &b1);
 
-	std::cout << "Enter step element: ";
-	std::cin >> step;
+	printf("Enter step element: ");
+	scanf_s("%d", &step);
 
-	std::cout << "\nBasic array:" << std::endl;
+	printf("\nBasic array:\n");
 
 	int arr[size];
 
