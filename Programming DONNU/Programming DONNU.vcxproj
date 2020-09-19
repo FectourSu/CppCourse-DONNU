@@ -143,8 +143,6 @@
     <ClCompile Include="Main.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="ExtendedArray.h" />
-    <ClInclude Include="CNTelement.h" />
     <ClInclude Include="Task1.h" />
     <ClInclude Include="Task2.h" />
     <ClInclude Include="Task3.h" />

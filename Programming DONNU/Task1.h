@@ -1,7 +1,14 @@
 #pragma once
 #include <iostream>
-#include "ExtendedArray.h"
 #include <memory>
+
+/*
+Объявить массив из n = 10 целых чисел, проинициализировать нулями. Функция processArray()
+должна заполнить массив членами геометрической прогрессии с начальным элементом b1 и шагом q
+(ввести с клаиватуры), подсчитать и вернуть cnt - количество всех трёзначных элементов массива,
+а так же сформировать выходной массив, который содержит все элементы исходного, кроме тех, которые
+делятся на 3 с остатком 1. Вывести на экран массивы.
+*/
 
 
 class Task1
@@ -9,7 +16,8 @@ class Task1
 public:
 	void Run()
 	{
-		int b1 = 0, step = 0, size = 10;
+		int b1 = 0, step = 0;
+		const int size = 10;
 
 		std::cout << "Enter initial element: ";
 		std::cin >> b1;
@@ -19,43 +27,69 @@ public:
 
 		std::cout << "\nBasic array:" << std::endl;
 
-		printBasicArray<int>(processArray(b1, step, size));
+		int arr[size];
+
+		int* mass = processArray(arr, b1, step, size);
+
+		printBasicArray<int>(mass, size);
+
+		delete[] mass;
 	}
 
 private:
 	template <typename T>
-	void printBasicArray(ExtendedArray<T> mass)
+	void printBasicArray(T* mass, const int size)
 	{
-		for (size_t i = 0; i < mass.getSize(); i++)
+		for (size_t i = 0; i < size; i++)
 		{
 
 			std::cout << "mass[" << i << "] = " << mass[i] << std::endl;
 		}
 	}
-	template <typename T>
-	ExtendedArray<T> processArray(T initialElement, T step, const int size)
+
+	int* processArray(int* mass, int initialElement, int step, const int size)
 	{
+		int result = initialElement;
 
-		ExtendedArray<T> arr(size);
+		size_t temp = 0;
+
+		while (temp < size)
+		{
+			mass[temp] = result;
+			result *= step;
+
+			temp++;
+		}
 		
-		arr.conditionArray(initialElement, step);
-		
-		CNT_element<T> object = arr.getCNTelements(initialElement, step);
+		printBasicArray<int>(mass, size);
 
-		printBasicArray<T>(arr);
+		int valueCNT = NULL;
+		temp = 0;
 
-		std::cout << "\nThe number of three-digit numbers: " << object.value << std::endl << std::endl;
+		while (temp < size)
+		{
+			if (mass[temp] < 1000 &&
+				mass[temp] > 99)
+				valueCNT++;
+			temp++;
+		}
 
-		ExtendedArray<int> arrSptr(size);
+		std::cout << "\nThe number of three-digit numbers: " << valueCNT << std::endl << std::endl;
+
+		int* arrSptr = new int[size];
+		temp = 0;
 
 		std::cout << "Result array:" << std::endl;
-		for (size_t i = 0; i < size; i++)
+
+		while (temp < size)
 		{
-			if (!(arr[i] % 3 == 1))
-				arrSptr[i] = arr[i];
+			if (!(mass[temp] % 3 == 1))
+				arrSptr[temp] = mass[temp];
 			else
-				arrSptr[i] = 0;
+				arrSptr[temp] = 0;
+			temp++;
 		}
+
 
 		return arrSptr;
 	}

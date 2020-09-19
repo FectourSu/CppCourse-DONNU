@@ -1,6 +1,12 @@
 #pragma once
 #include <iostream>
 
+/*
+Функция strcat.
+Формат: char* strcat(char* dest, const char* src).
+Функция приписывает строку src к строке dest.
+*/
+
 class Task3 
 {
 public:
@@ -16,9 +22,11 @@ public:
 		const char* src = "World";
 
 		std::cout << strcat(dest, src) << std::endl;
+
+		delete[] dest;
 	}
+
 private:
-	
 	char* strcat(char* dest, const char* src)
 	{
 		size_t i, j;
