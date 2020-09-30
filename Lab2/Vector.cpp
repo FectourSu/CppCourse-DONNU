@@ -1,7 +1,5 @@
 #include "Vector.h"
 
-
-
 template<typename T>
 inline Vector<T>::Vector(const Vector<T>& adrs)
 {

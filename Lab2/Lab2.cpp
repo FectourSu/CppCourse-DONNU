@@ -226,6 +226,8 @@ int main()
 			{"Gorlovka", static_cast<Rating>(rand() % VeryNice)}
 		};
 
+		a1.serialize();
+
 		Artist a2("Ivan", "Grachev", "Pianino", "Male", concertRate(concertArtist2), 20);
 
 		for (int i = 0; i < (sizeof(conc) / sizeof(*conc)); i++)
@@ -257,6 +259,8 @@ int main()
 			}
 		);
 
+		Serialize<std::vector<Artist*>> arrobject("objectVector.txt");
+
 		for (auto item : artists)
 		{
 			std::cout << "\nName: " << item->get_firstName() 
@@ -265,6 +269,8 @@ int main()
 				<< "\nYears old: " << item->get_yearOld()
 				<< "\nInstrument: " << item->get_musicalInstrument() 
 				<< "\nRating: " << item->get_rating() << std::endl;
+
+			arrobject.serialize(artists);
 		}
 
 		delete a3;
