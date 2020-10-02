@@ -237,14 +237,6 @@ int main()
 
 		std::vector<Artist*> artists = { &a1, &a2, a3 };
 
-		//swap
-		inline_function(with_params(Artist** xp, Artist** yp))
-		{
-			Artist* temp = *xp;
-			*xp = *yp;
-			*yp = temp;
-		} with_name(swap);
-
 		//bubble sort
 		inline_function(with_params(std::vector<Artist*> artists, int n))
 		{
