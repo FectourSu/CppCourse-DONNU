@@ -1,5 +1,5 @@
 #pragma once
-
+#include <math.h>
 template<typename T>
 class Matrix
 {
@@ -21,12 +21,13 @@ private:
 		delete[] this->sourceArray;
 	}
 
+
 public:
 	Matrix(int rows, int cells); 
 	Matrix(const Matrix<T>& adrsMatrix);
 	~Matrix();
 	T*& operator[](int i) const;
-
+	static Matrix<T> getMatrix(const int sizeRow, const int sizeCell);
 	//pre-increment
 	Matrix<T>& operator++();
 	Matrix<T>& operator--();

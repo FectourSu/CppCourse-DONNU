@@ -1,9 +1,11 @@
 #pragma once
+#include "Matrix.h"
 template<typename T>
 class Vector {
 private:
 	T* inputArr;
 	int sizeArray;
+
 
 
 	void incrementArr();
@@ -26,4 +28,6 @@ public:
 	//post-increment
 	Vector<T> operator--(int);
 	Vector<T> operator++(int);
+
+	static Vector<T> getConvertMatrix(Matrix<T> tdArray, const int sizeRow, const int sizeCell);
 };

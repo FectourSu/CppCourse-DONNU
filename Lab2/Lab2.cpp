@@ -7,6 +7,22 @@
 #include "Matrix.cpp"
 #include "Fraction.h"
 #include "Artist.h"
+
+//macross
+
+#define inline_function(params) \
+class \
+{ \
+    public: void operator() (params)\
+    {\
+
+#define with_name(value) \
+    }\
+} value;
+
+#define with_params(...) __VA_ARGS__
+
+
 /* Задание 1 
 	Написать классы Vector и Matrix для хранения и обработки одномерных и
 двумерных массивов, соответственно. Реализовать задание 2 лабораторной работы №1
@@ -23,37 +39,7 @@
 инкременте / декременте каждого элемента массива.
 */
 
-Vector<float> convertMatrix(Matrix<float> tdArray, const int sizeRow, const int sizeCell)
-{
-	Vector<float> arr(sizeRow * sizeCell);
 
-	for (int i = 0, k = 0; i < sizeRow; i++)
-	{
-		for (int j = 0; j < sizeCell; j++)
-		{
-			arr[k] = tdArray[i][j];
-			k++;
-		}
-	}
-
-	return arr;
-}
-
-Matrix<float> getMatrix(const int sizeRow, const int sizeCell)
-{
-	Matrix<float> tdArray(sizeRow, sizeCell);
-
-	for (size_t i = 0; i < sizeRow; i++)
-	{
-		for (size_t j = 0; j < sizeCell; j++)
-		{
-			tdArray[i][j] = sqrtf(i + j + 1);
-		}
-	}
-
-	return tdArray;
-
-}
 
 int main()
 {
@@ -79,7 +65,7 @@ int main()
 	*/
 	std::cout << std::endl << "Task 1: " << std::endl;
 	{
-		Matrix<float> tdArray = getMatrix(row, cell);
+		Matrix<float> tdArray = Matrix<float>::getMatrix(row, cell);
 
 		std::cout << "\nMatrix: " << std::endl;
 		for (size_t i = 0; i < tdArray.getRows(); i++)
@@ -92,7 +78,8 @@ int main()
 		}
 
 		std::cout << "\Vector: " << std::endl;
-		Vector<float> arr = convertMatrix(tdArray, row, cell);
+
+		Vector<float> arr = Vector<float>::getConvertMatrix(tdArray, row, cell);
 
 		for (size_t i = 0; i < row * cell; i++)
 		{
@@ -250,14 +237,32 @@ int main()
 
 		std::vector<Artist*> artists = { &a1, &a2, a3 };
 
-		std::sort(artists.begin(), artists.end(), [](Artist* a1, Artist* a2) {
-			if (a1->get_musicalInstrument() == "Pianino")
-				return true;
-			else if (a2->get_musicalInstrument() == "Pianino")
-				return false;
-			return a1->get_rating() > a2->get_rating();
-			}
-		);
+		//swap
+		inline_function(with_params(Artist** xp, Artist** yp))
+		{
+			Artist* temp = *xp;
+			*xp = *yp;
+			*yp = temp;
+		} with_name(swap);
+
+		//bubble sort
+		inline_function(with_params(std::vector<Artist*> artists, int n))
+		{
+			for (int i = 1; i < n; i++)
+				for (int j = 0; j < n - i; j++)
+					if (artists[j]->get_musicalInstrument() == "Pianino" 
+						&& artists[j]->get_rating() < artists[j + 1]->get_rating())
+					{
+						auto temp = artists[j];
+						artists[j] = artists[j + 1];
+						artists[j + 1] = temp;
+					}
+		}
+			
+		with_name(bubbleSort);
+
+		bubbleSort(artists, 3);
+		
 
 		Serialize<std::vector<Artist*>> arrobject("objectVector.txt");
 

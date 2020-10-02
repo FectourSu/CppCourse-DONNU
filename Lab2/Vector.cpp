@@ -73,6 +73,22 @@ inline Vector<T> Vector<T>::operator++(int)
 	return temp;
 }
 
+template<typename T>
+Vector<T> Vector<T>::getConvertMatrix(Matrix<T> tdArray, const int sizeRow, const int sizeCell)
+{
+	Vector<T> arr(sizeRow * sizeCell);
+
+	for (int i = 0, k = 0; i < sizeRow; i++)
+	{
+		for (int j = 0; j < sizeCell; j++)
+		{
+			arr[k] = tdArray[i][j];
+			k++;
+		}
+	}
+
+	return arr;
+}
 
 template<typename T>
 inline void Vector<T>::incrementArr()

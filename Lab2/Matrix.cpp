@@ -37,6 +37,23 @@ inline int Matrix<T>::getCells()
 }
 
 template<typename T>
+Matrix<T> Matrix<T>::getMatrix(const int sizeRow, const int sizeCell)
+{
+		Matrix<T> tdArray(sizeRow, sizeCell);
+
+		for (size_t i = 0; i < sizeRow; i++)
+		{
+			for (size_t j = 0; j < sizeCell; j++)
+			{
+				tdArray[i][j] = sqrtf(i + j + 1);
+			}
+		}
+
+		return tdArray;
+
+}
+
+template<typename T>
 inline Matrix<T>::Matrix(int rows, int cells)
 {
 	this->cells = cells;
