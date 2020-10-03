@@ -39,7 +39,7 @@ public:
 };
 
 //bubble sort
-template<class Pred>
+template<typename Artist, class Pred>
 inline void Artist::bubbleSorting(std::vector<Artist>& arr, Pred perd)
 {
 	for (int i = 1; i < arr.size(); i++)
