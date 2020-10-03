@@ -19,7 +19,7 @@ public:
 	Artist(std::string firstName, std::string secondName, std::string musicalInstrument, 
 		std::string gender, int rating, int yearOld);
 
-	template<typename TItem, class Pred>
+	template<typename Artist, class Pred>
 	static void bubbleSorting(std::vector<Artist>& arr, Pred perd);
 
 
