@@ -19,7 +19,7 @@ public:
 	Artist(std::string firstName, std::string secondName, std::string musicalInstrument, 
 		std::string gender, int rating, int yearOld);
 
-	template<typename Artist, class Pred>
+	template<class Pred>
 	static void bubbleSorting(std::vector<Artist>& arr, Pred perd);
 
 
@@ -39,7 +39,7 @@ public:
 };
 
 //bubble sort
-template<typename Artist, class Pred>
+template<class Pred>
 inline void Artist::bubbleSorting(std::vector<Artist>& arr, Pred perd)
 {
 	for (int i = 1; i < arr.size(); i++)
