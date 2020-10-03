@@ -10,17 +10,17 @@
 
 //macross
 
-#define inline_function(params) \
-class \
-{ \
-    public: void operator() (params)\
-    {\
-
-#define with_name(value) \
-    }\
-} value;
-
-#define with_params(...) __VA_ARGS__
+//#define inline_function(params) \
+//class \
+//{ \
+//    public: void operator() (params)\
+//    {\
+//
+//#define with_name(value) \
+//    }\
+//} value;
+//
+//#define with_params(...) __VA_ARGS__
 
 
 /* Задание 1 
@@ -238,22 +238,23 @@ int main()
 		std::vector<Artist*> artists = { &a1, &a2, a3 };
 
 		//bubble sort
-		inline_function(with_params(std::vector<Artist*> artists, int n))
-		{
-			for (int i = 1; i < n; i++)
-				for (int j = 0; j < n - i; j++)
-					if (artists[j]->get_musicalInstrument() == "Pianino" 
-						&& artists[j]->get_rating() < artists[j + 1]->get_rating())
-					{
-						auto temp = artists[j];
-						artists[j] = artists[j + 1];
-						artists[j + 1] = temp;
-					}
-		}
-			
-		with_name(bubbleSort);
+		//inline_function(with_params(std::vector<Artist*>& artists, int n))
+		//{
+		//	for (int i = 1; i < n; i++)
+		//		for (int j = 0; j < n - i; j++)
+		//			if (artists[j]->get_musicalInstrument() == "Pianino" 
+		//				&& artists[j]->get_rating() < artists[j + 1]->get_rating())
+		//			{
+		//				auto temp = artists[j];
+		//				artists[j] = artists[j + 1];
+		//				artists[j + 1] = temp;
+		//			}
+		//}
+		//with_name(bubbleSort);
 
-		bubbleSort(artists, 3);
+		Artist::bubbleSorting<Artist*>(artists, [](Artist* s1, Artist* s2) {
+			return s1->get_rating() < s2->get_rating() | s2->get_musicalInstrument() == "Pianino";
+			});
 		
 
 		Serialize<std::vector<Artist*>> arrobject("objectVector.txt");
