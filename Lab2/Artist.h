@@ -20,7 +20,7 @@ public:
 		std::string gender, int rating, int yearOld);
 
 	template<typename TItem, class Pred>
-	static void bubbleSorting(std::vector<TItem>& arr, Pred perd);
+	static void bubbleSorting(std::vector<Artist>& arr, Pred perd);
 
 
 	PROPERTIES(std::string, firstName);
@@ -39,8 +39,8 @@ public:
 };
 
 //bubble sort
-template<typename TItem, class Pred>
-inline void Artist::bubbleSorting(std::vector<TItem>& arr, Pred perd)
+template<class Pred>
+inline void Artist::bubbleSorting(std::vector<Artist>& arr, Pred perd)
 {
 	for (int i = 1; i < arr.size(); i++)
 	{
