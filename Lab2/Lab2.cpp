@@ -252,9 +252,9 @@ int main()
 		//}
 		//with_name(bubbleSort);
 
-		Artist::bubbleSorting<Artist*>(artists, [](Artist* s1, Artist* s2) {
-			return s1->get_rating() < s2->get_rating() | s2->get_musicalInstrument() == "Pianino";
-			});
+		//Artist::bubbleSorting<Artist*>(artists, [](Artist* s1, Artist* s2) {
+			//return s1->get_rating() < s2->get_rating() | s2->get_musicalInstrument() == "Pianino";
+			//});
 		
 
 		Serialize<std::vector<Artist*>> arrobject("objectVector.txt");
