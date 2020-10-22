@@ -10,7 +10,7 @@ protected:
 	size_t countOperands;
 	double* operands;
 
-	std::string outOperands(std::string operands);
+	std::string joinOperands(std::string s);
 
 public:
 	ExpressionEvaluator();
@@ -20,6 +20,7 @@ public:
 	void logToScreen() override;
 	void logToFile(const std::string& fileName) override;
 
+	virtual double calculate() = 0;
 
 	void setOperand(size_t pos, double value);
 	void setOperands(double ops[], size_t n);

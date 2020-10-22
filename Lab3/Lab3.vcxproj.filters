@@ -18,9 +18,6 @@
     <ClCompile Include="Lab3.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
-    <ClCompile Include="Summator.cpp">
-      <Filter>Исходные файлы</Filter>
-    </ClCompile>
     <ClCompile Include="ExpressionEvaluator.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
@@ -36,11 +33,11 @@
     <ClCompile Include="CustomExpressionEvalautor.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
+    <ClCompile Include="IShuffle.cpp">
+      <Filter>Исходные файлы</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Summator.h">
-      <Filter>Файлы заголовков</Filter>
-    </ClInclude>
     <ClInclude Include="ExpressionEvaluator.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>

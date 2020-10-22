@@ -142,17 +142,16 @@
     <ClCompile Include="CustomExpressionEvalautor.cpp" />
     <ClCompile Include="ExpressionEvaluator.cpp" />
     <ClCompile Include="ILoggable.cpp" />
+    <ClCompile Include="IShuffle.cpp" />
     <ClCompile Include="Lab3.cpp" />
     <ClCompile Include="Multiplier.cpp" />
     <ClCompile Include="Subtractor.cpp" />
-    <ClCompile Include="Summator.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="CustomExpressionEvaluator.h" />
     <ClInclude Include="ExpressionEvaluator.h" />
     <ClInclude Include="Multiplier.h" />
     <ClInclude Include="Subtractor.h" />
-    <ClInclude Include="Summator.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

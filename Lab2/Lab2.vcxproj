@@ -139,6 +139,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="ArraySorter.cpp" />
     <ClCompile Include="Artist.cpp" />
     <ClCompile Include="Fraction.cpp" />
     <ClCompile Include="Lab2.cpp" />

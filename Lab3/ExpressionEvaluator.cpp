@@ -1,5 +1,20 @@
 #include "ExpressionEvaluator.h"
 
+std::string ExpressionEvaluator::joinOperands(std::string s)
+{
+	std::string str;
+
+	for (size_t i = 0; i < this->countOperands; i++)
+	{
+		str += this->operands[i] >= 0 ? std::to_string(this->operands[i])
+			: " ( " + std::to_string(this->operands[i]) + " ) ";
+
+		if (i != this->countOperands - 1)
+			str += s;
+	}
+	return str;
+}
+
 inline ExpressionEvaluator::ExpressionEvaluator()
 	: ExpressionEvaluator::ExpressionEvaluator(20)
 {
@@ -25,7 +40,7 @@ void ExpressionEvaluator::logToScreen()
 		std::cout << this->operands[i] << ";";
 }
 
-void ExpressionEvaluator::logToFile(const std::string fileName)
+void ExpressionEvaluator::logToFile(const std::string& fileName)
 {
 	std::string str;
 

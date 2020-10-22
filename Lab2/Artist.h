@@ -37,21 +37,3 @@ public:
 	static Artist deserialize(const std::string& filename);
 	static Artist deserialize();
 };
-
-//bubble sort
-template<class Pred>
-inline void Artist::bubbleSorting(std::vector<Artist>& arr, Pred perd)
-{
-	for (int i = 1; i < arr.size(); i++)
-	{
-		for (int j = 0; j < arr.size() - i; j++)
-		{
-			if (pred(arr[j], arr[j + 1]))
-			{
-				auto temp = arr[j];
-				arr[j] = arr[j + 1];
-				arr[j + 1] = temp;
-			}
-		}
-	}
-}

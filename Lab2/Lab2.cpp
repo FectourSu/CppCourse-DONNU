@@ -7,8 +7,7 @@
 #include "Matrix.cpp"
 #include "Fraction.h"
 #include "Artist.h"
-
-//macross
+#include "ArraySorter.cpp"
 
 //#define inline_function(params) \
 //class \
@@ -21,25 +20,6 @@
 //} value;
 //
 //#define with_params(...) __VA_ARGS__
-
-
-/* Задание 1 
-	Написать классы Vector и Matrix для хранения и обработки одномерных и
-двумерных массивов, соответственно. Реализовать задание 2 лабораторной работы №1
-с помощью созданных классов. Все функции оформить в виде методов классов.
-В коде отразить следующее:
-	1. Выделение и освобождение динамической памяти производить в конструкторах и
-деструкторах классов, соответственно.
-	2. В классе Vector перегрузить оператор индексации []. В классе Matrix добавить
-методы T at(int i, int j) const и setAt(int i, int j, T val), которые
-позволяют получить и установить значение элемента массива с индексом [i][j], T –
-это тип элементов массива по варианту (int или double).
-	3. Перегрузить операторы инкремента и декремента (как префиксного, так и
-постфиксного). Смысл инкремента / декремента всего массива заключается в
-инкременте / декременте каждого элемента массива.
-*/
-
-
 
 int main()
 {
@@ -252,9 +232,9 @@ int main()
 		//}
 		//with_name(bubbleSort);
 
-		//Artist::bubbleSorting<Artist*>(artists, [](Artist* s1, Artist* s2) {
-			//return s1->get_rating() < s2->get_rating() | s2->get_musicalInstrument() == "Pianino";
-			//});
+		ArraySorter::bubbleSorting<Artist*>(artists, [](Artist* s1, Artist* s2) {
+			return s1->get_rating() < s2->get_rating() | s2->get_musicalInstrument() == "Pianino";
+			});
 		
 
 		Serialize<std::vector<Artist*>> arrobject("objectVector.txt");
