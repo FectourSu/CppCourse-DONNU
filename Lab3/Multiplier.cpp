@@ -27,18 +27,10 @@ void Multiplier::logToFile(const std::string& fileName)
 
 double Multiplier::calculate()
 {
-    double result = NULL;
+    double result = this->operands[0];
 
-    for (size_t i = 0; i < this->countOperands; i++)
+    for (size_t i = 1; i < this->countOperands; i++)
         result *= this->operands[i];
 
     return result;
 }
-
-//void Multiplier::shuffle()
-//{
-//}
-//
-//void Multiplier::shuffle(size_t i, size_t j)
-//{
-//}

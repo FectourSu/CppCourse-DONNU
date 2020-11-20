@@ -2,7 +2,7 @@
 #include <iostream>
 #include <cstring>
 #include <fstream>
-#include "ILoggable.cpp"
+#include "ILoggable.h"
 
 class ExpressionEvaluator : public ILoggable
 {

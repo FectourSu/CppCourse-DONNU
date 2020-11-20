@@ -26,18 +26,13 @@ void Subtractor::logToFile(const std::string& fileName)
 
 double Subtractor::calculate()
 {
-    double result = NULL;
+    double result = 0;
 
     for (size_t i = 0; i < this->countOperands; i++)
-        result -= this->operands[i];
+        if(operands[i] < 0)
+            result += this->operands[i];
+        else
+            result -= this->operands[i];
 
     return result;
 }
-
-//void Subtractor::shuffle()
-//{
-//}
-//
-//void Subtractor::shuffle(size_t i, size_t j)
-//{
-//}

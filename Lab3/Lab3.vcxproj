@@ -139,19 +139,26 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Artist.cpp" />
     <ClCompile Include="CustomExpressionEvalautor.cpp" />
     <ClCompile Include="ExpressionEvaluator.cpp" />
-    <ClCompile Include="ILoggable.cpp" />
-    <ClCompile Include="IShuffle.cpp" />
     <ClCompile Include="Lab3.cpp" />
     <ClCompile Include="Multiplier.cpp" />
+    <ClCompile Include="Person.cpp" />
     <ClCompile Include="Subtractor.cpp" />
+    <ClCompile Include="Visitor.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Artist.h" />
     <ClInclude Include="CustomExpressionEvaluator.h" />
     <ClInclude Include="ExpressionEvaluator.h" />
+    <ClInclude Include="ILoggable.h" />
+    <ClInclude Include="IShuffle.h" />
+    <ClInclude Include="IVisitor.h" />
     <ClInclude Include="Multiplier.h" />
+    <ClInclude Include="Person.h" />
     <ClInclude Include="Subtractor.h" />
+    <ClInclude Include="Visitor.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

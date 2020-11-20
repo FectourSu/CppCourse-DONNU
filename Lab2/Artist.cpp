@@ -1,3 +1,4 @@
+#include "..\Lab3\Artist.h"
 #include "Artist.h"
 
 

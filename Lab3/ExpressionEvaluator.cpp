@@ -15,12 +15,13 @@ std::string ExpressionEvaluator::joinOperands(std::string s)
 	return str;
 }
 
-inline ExpressionEvaluator::ExpressionEvaluator()
+ExpressionEvaluator::ExpressionEvaluator()
 	: ExpressionEvaluator::ExpressionEvaluator(20)
 {
 }
 
-inline ExpressionEvaluator::ExpressionEvaluator(size_t n)
+
+ExpressionEvaluator::ExpressionEvaluator(size_t n)
 {
 	this->countOperands = n;
 
@@ -29,7 +30,7 @@ inline ExpressionEvaluator::ExpressionEvaluator(size_t n)
 	memset(this->operands, 0, this->countOperands);
 }
 
-inline ExpressionEvaluator::~ExpressionEvaluator()
+ExpressionEvaluator::~ExpressionEvaluator()
 {
 	delete[] this->operands;
 }
@@ -56,7 +57,7 @@ void ExpressionEvaluator::logToFile(const std::string& fileName)
 }
 
 
-inline void ExpressionEvaluator::setOperand(size_t pos, double value)
+void ExpressionEvaluator::setOperand(size_t pos, double value)
 {
 	if (pos < 0 || pos >= this->countOperands)
 		throw std::exception("Argument out of range");
@@ -64,7 +65,7 @@ inline void ExpressionEvaluator::setOperand(size_t pos, double value)
 	this->operands[pos] = value;
 }
 
-inline void ExpressionEvaluator::setOperands(double ops[], size_t n)
+void ExpressionEvaluator::setOperands(double ops[], size_t n)
 {
 	if (this->operands)
 		delete[] this->operands;
