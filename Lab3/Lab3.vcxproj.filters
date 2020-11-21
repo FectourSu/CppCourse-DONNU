@@ -33,9 +33,6 @@
     <ClCompile Include="Artist.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
-    <ClCompile Include="Person.cpp">
-      <Filter>Исходные файлы</Filter>
-    </ClCompile>
     <ClCompile Include="Visitor.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>

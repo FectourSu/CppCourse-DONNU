@@ -7,7 +7,9 @@
 
 class Person
 {
+	static size_t& foc() { static size_t c = 0; return c; }
 public:
+	static size_t& countPerson() { return foc(); }
 	PROPERTIES(std::string, firstName);
 	PROPERTIES(std::string, secondName);
 	PROPERTIES(std::string, gender);

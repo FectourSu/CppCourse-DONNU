@@ -10,10 +10,9 @@
 
 class Artist : public Person, public IVisitor
 {
-	int concertCount;
-
+	int concertCount = 0;
 public:
-	Artist() = default;
+	Artist();
 	~Artist();
 
 	int getConcertCount();

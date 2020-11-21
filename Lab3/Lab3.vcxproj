@@ -144,7 +144,6 @@
     <ClCompile Include="ExpressionEvaluator.cpp" />
     <ClCompile Include="Lab3.cpp" />
     <ClCompile Include="Multiplier.cpp" />
-    <ClCompile Include="Person.cpp" />
     <ClCompile Include="Subtractor.cpp" />
     <ClCompile Include="Visitor.cpp" />
   </ItemGroup>

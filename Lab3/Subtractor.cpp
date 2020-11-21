@@ -26,13 +26,10 @@ void Subtractor::logToFile(const std::string& fileName)
 
 double Subtractor::calculate()
 {
-    double result = 0;
+    double result = this->operands[0];
 
-    for (size_t i = 0; i < this->countOperands; i++)
-        if(operands[i] < 0)
-            result += this->operands[i];
-        else
-            result -= this->operands[i];
+    for (size_t i = 1; i < this->countOperands; i++)
+       result -= this->operands[i];
 
     return result;
 }
