@@ -1,0 +1,49 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Исходные файлы">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;c++;cppm;ixx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Файлы заголовков">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;h++;hm;inl;inc;ipp;xsd</Extensions>
+    </Filter>
+    <Filter Include="Файлы ресурсов">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="Task2">
+      <UniqueIdentifier>{ead5df37-8525-44ef-9cda-3661126c88c5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Task1">
+      <UniqueIdentifier>{4e40a400-945a-481c-b046-fa2863c992ce}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Task3-4">
+      <UniqueIdentifier>{15466e29-09d0-4756-b7ce-4eae92a7676b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Task5">
+      <UniqueIdentifier>{b295770c-d824-4a82-a016-16c2f32c8192}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Lab5.cpp" />
+    <ClCompile Include="DataManager.cpp">
+      <Filter>Task1</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="DataManager.h">
+      <Filter>Task1</Filter>
+    </ClInclude>
+    <ClInclude Include="FileReader.h">
+      <Filter>Task2</Filter>
+    </ClInclude>
+    <ClInclude Include="Book.h">
+      <Filter>Task3-4</Filter>
+    </ClInclude>
+    <ClInclude Include="Catch.h">
+      <Filter>Task5</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>
