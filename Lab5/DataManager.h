@@ -36,8 +36,8 @@ public:
 	{
 		arr.push_back(value);
 
-		if (scan(arr[arr.size()]))
-			arr[arr.size()] = '_';
+		if (scan(arr[arr.size() - 1]))
+			arr[arr.size()- 1] = '_';
 		
 	}
 	char popUpper()

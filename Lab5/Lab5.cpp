@@ -27,6 +27,7 @@ int main()
 
     auto charLower = char_manager.popLower();
 
+    std::cout << charLower << std::endl;
      //  Написать код для чтения произвольного текстового файла и вывода на экран всех слов
      //  размером более 3 букв, встречающихся в нем не менее 7 раз, в порядке убывания
      //  частоты встречаемости(приложение А).В качестве разделителей слов рассматривать
@@ -66,7 +67,7 @@ int main()
     // только стандартные алгоритмы и функторы STL(подcказка: std::count_if,
     // std::greater<>, std::bind2nd)
 
-    int mc = std::count_if(books.begin(), books.end(), [](Book book) {return book.Year > 2000; });
+    std::cout << std::count_if(books.begin(), books.end(), [](Book book) {return book.Year > 2000; }) << std::endl;
 
     // Написать шаблонный класс кэша данных Cache<T> с методом добавления элемента в
     // кеш put(T elem) и его аналогом – оператором +=, а также методом проверки наличия
